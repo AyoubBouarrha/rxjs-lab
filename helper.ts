@@ -1,6 +1,6 @@
 import * as colors from 'colors';colors;
 
-export function textColor(color: string, text : string): string {
+export function textColor(color: string, text : any): string {
     //🔴🔵🟡🟢⚪🟠🟣🟤
     switch (color) {
         case 'green':
