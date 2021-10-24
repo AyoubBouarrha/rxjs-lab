@@ -1,17 +1,17 @@
 import * as colors from 'colors';colors;
 
-export function color(colortText: string): string {
+export function textColor(color: string, text : string): string {
     //🔴🔵🟡🟢⚪🟠🟣🟤
-    switch (colortText) {
+    switch (color) {
         case 'green':
-            return "🟩 Green".green;
+            return `🟩 ${text}`.green;
         case 'blue':
-            return "🟦 Blue".blue;
+            return `🟦 ${text}`.blue;
         case 'red':
-            return "🟥 Red".red;
+            return `🟥 ${text}`.red;
         case 'yellow':
-            return "🟨 Yellow".yellow;
+            return `🟨 ${text}`.yellow;
         default:
-            return "⬜ white".white;
+            return `⬜ ${text}`.white;
     }
 }

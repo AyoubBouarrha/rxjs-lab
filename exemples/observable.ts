@@ -1,15 +1,21 @@
 import { Observable, Subscription } from 'rxjs';
-import { color } from '../helper'
+import { textColor } from '../helper'
 
 let ourObservables = new Observable(observer => {
-    observer.next(color("yellow"));
+    observer.next(textColor("yellow","A"));
     setTimeout(() => {
-        observer.next(color("green"));
+        observer.next(textColor("green","B"));
+        observer.error(textColor("red","Erreur"));
     }, 2000);
 });
 
-let ourSubscribtion : Subscription = ourObservables.subscribe(data => {
-    console.log(data);
-});
+let ourSubscribtion : Subscription = ourObservables.subscribe(
+    data => {
+    console.log(data);    
+    },
+    error =>{
+        console.error(error);
+    }
+);
 
-//ourSubscribtion.unsubscribe();
+ourSubscribtion.unsubscribe();
